@@ -1,0 +1,37 @@
+{
+  "name": "starline-obsidian-archive",
+  "version": "1.3.1",
+  "owner": "墨点星痕 (starline)",
+  "author": {
+    "name": "墨点星痕",
+    "english_name": "starline"
+  },
+  "updated_at": "2026-08-16",
+  "status": "active",
+  "maturity_tier": "library",
+  "lifecycle_stage": "library",
+  "context_budget_tier": "production",
+  "review_cadence": "quarterly",
+  "upstream_inspiration": "https://github.com/openclaw/openclaw/tree/main/extensions/memory-wiki/skills/obsidian-vault-maintainer; https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-markdown; https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-cli; https://github.com/johansan/obsidian-featured-image",
+  "intent": {
+    "job": "将用户明确授权的本地创作或项目记录以非破坏方式索引并链接到 Obsidian 知识库；也可作为全局 Agent 的轻量记忆协调器，在每个非临时任务前检索 Vault 上下文、在验证完成后创建一份链接权威笔记的会话摘要并回写长期结论；在用户明确要求时，为该 Vault 建立可移植的跨项目长期记忆 Pull / Push 规则。",
+    "target_users": ["需要长期维护本地创作、媒体或项目档案的 Obsidian 用户", "希望让多个 Agent 通过同一 Vault 共享长期项目结论的用户", "希望让 Codex 在所有非临时任务中统一执行长期记忆 Pull / Push 与会话摘要的用户"],
+    "inputs": ["Obsidian vault 路径", "用户批准的来源目录", "可选的上下文文档和去重需求", "可选的跨项目长期记忆规则请求", "可选的全局 Agent 任务上下文", "可选的会话摘要模式请求"],
+    "outputs": ["来源清单", "可点击的 Obsidian 索引", "分组笔记", "JSON 清单", "项目记忆更新", "可选的 Vault 根 AGENTS.md 与客户端接入协议", "轻量的任务前 Memory Pull 与任务后 Memory Push", "可选的、链接权威笔记的会话摘要"],
+    "exclusions": ["原始文件迁移或删除", "未授权全盘扫描", "云端同步", "图片生成", "敏感数据收集", "实时截取、逐字保存或桥接聊天记录"]
+  },
+  "target_platforms": ["openai", "claude", "generic", "agent-skills-compatible", "vscode"],
+  "release_gates": ["validate_skill", "trigger_eval", "skill_ir", "prior_art_research", "source_boundary_review", "utf8_and_wikilink_verification"],
+  "starline_defaults": {
+    "skill_name_prefix": "starline-",
+    "author_name": "墨点星痕",
+    "author_english_name": "starline",
+    "frontmatter_author": "墨点星痕 (starline)"
+  },
+  "naming": {
+    "default_prefix": "starline-",
+    "max_preferred_hyphen_parts": 3,
+    "allow_user_prefix_override": true,
+    "allow_no_prefix": true
+  }
+}

@@ -1,0 +1,573 @@
+{
+  "ok": true,
+  "complete": false,
+  "researched_at": "2026-08-16",
+  "queries": [
+    "Obsidian knowledge base organization",
+    "Obsidian vault project memory",
+    "Obsidian image asset catalog",
+    "local file inventory Obsidian"
+  ],
+  "metric_semantics": {
+    "skills_sh_installs": "ecosystem install telemetry; not ratings or correctness",
+    "skillsmp_repo_stars": "GitHub repository stars; not installs, ratings, or skill-specific quality",
+    "cross_catalog_score": "not calculated; metrics remain separate"
+  },
+  "query_runs": [
+    {
+      "query": "Obsidian knowledge base organization",
+      "skills_sh": "not_run",
+      "skillsmp": "ok",
+      "skillsmp_candidates": 9
+    },
+    {
+      "query": "Obsidian vault project memory",
+      "skills_sh": "not_run",
+      "skillsmp": "ok",
+      "skillsmp_candidates": 9
+    },
+    {
+      "query": "Obsidian image asset catalog",
+      "skills_sh": "not_run",
+      "skillsmp": "ok",
+      "skillsmp_candidates": 9
+    },
+    {
+      "query": "local file inventory Obsidian",
+      "skills_sh": "not_run",
+      "skillsmp": "ok",
+      "skillsmp_candidates": 10
+    }
+  ],
+  "candidate_family_count": 19,
+  "candidates": [
+    {
+      "family_key": "openclaw/openclaw:meme-maker",
+      "queries": [
+        "local file inventory Obsidian"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "meme-maker",
+        "author": "openclaw",
+        "description": "Search meme templates, suggest formats, and generate local or hosted image memes.",
+        "content_language": "en",
+        "github_url": "https://github.com/openclaw/openclaw/tree/main/skills/meme-maker",
+        "skillsmp_url": "https://skillsmp.com/creators/openclaw/openclaw/skills-meme-maker",
+        "repo_stars": 386158,
+        "catalog_updated_at": "2026-07-17T04:42:12+00:00",
+        "source_key": "openclaw/openclaw:skills/meme-maker",
+        "family_key": "openclaw/openclaw:meme-maker",
+        "aliases": [],
+        "query": "local file inventory Obsidian"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openclaw/openclaw:model-usage",
+      "queries": [
+        "local file inventory Obsidian"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "model-usage",
+        "author": "openclaw",
+        "description": "Summarize CodexBar local cost logs by model for Codex or Claude, including current or full breakdowns.",
+        "content_language": "en",
+        "github_url": "https://github.com/openclaw/openclaw/tree/main/skills/model-usage",
+        "skillsmp_url": "https://skillsmp.com/creators/openclaw/openclaw/skills-model-usage",
+        "repo_stars": 386158,
+        "catalog_updated_at": "2026-07-21T18:04:46+00:00",
+        "source_key": "openclaw/openclaw:skills/model-usage",
+        "family_key": "openclaw/openclaw:model-usage",
+        "aliases": [],
+        "query": "local file inventory Obsidian"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openclaw/openclaw:obsidian",
+      "queries": [
+        "Obsidian image asset catalog",
+        "Obsidian knowledge base organization",
+        "Obsidian vault project memory"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "obsidian",
+        "author": "openclaw",
+        "description": "Work with Obsidian vaults using the official obsidian CLI: read/search/create/edit notes, tasks, links, properties, plugins.",
+        "content_language": "en",
+        "github_url": "https://github.com/openclaw/openclaw/tree/main/skills/obsidian",
+        "skillsmp_url": "https://skillsmp.com/creators/openclaw/openclaw/skills-obsidian",
+        "repo_stars": 386158,
+        "catalog_updated_at": "2026-05-17T11:09:34+00:00",
+        "source_key": "openclaw/openclaw:skills/obsidian",
+        "family_key": "openclaw/openclaw:obsidian",
+        "aliases": [],
+        "query": "Obsidian knowledge base organization"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openclaw/openclaw:obsidian-vault-maintainer",
+      "queries": [
+        "Obsidian image asset catalog",
+        "Obsidian knowledge base organization",
+        "Obsidian vault project memory"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "obsidian-vault-maintainer",
+        "author": "openclaw",
+        "description": "Maintain an Obsidian-friendly memory wiki vault with wikilinks, frontmatter, and official Obsidian CLI awareness.",
+        "content_language": "en",
+        "github_url": "https://github.com/openclaw/openclaw/tree/main/extensions/memory-wiki/skills/obsidian-vault-maintainer",
+        "skillsmp_url": "https://skillsmp.com/creators/openclaw/openclaw/extensions-memory-wiki-skills-obsidian-vault-maintainer",
+        "repo_stars": 386158,
+        "catalog_updated_at": "2026-04-06T03:56:52+00:00",
+        "source_key": "openclaw/openclaw:extensions/memory-wiki/skills/obsidian-vault-maintainer",
+        "family_key": "openclaw/openclaw:obsidian-vault-maintainer",
+        "aliases": [],
+        "query": "Obsidian knowledge base organization"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openclaw/openclaw:openai-whisper",
+      "queries": [
+        "local file inventory Obsidian"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "openai-whisper",
+        "author": "openclaw",
+        "description": "Local speech-to-text with the Whisper CLI (no API key).",
+        "content_language": "en",
+        "github_url": "https://github.com/openclaw/openclaw/tree/main/skills/openai-whisper",
+        "skillsmp_url": "https://skillsmp.com/creators/openclaw/openclaw/skills-openai-whisper",
+        "repo_stars": 386158,
+        "catalog_updated_at": "2026-05-17T10:50:27+00:00",
+        "source_key": "openclaw/openclaw:skills/openai-whisper",
+        "family_key": "openclaw/openclaw:openai-whisper",
+        "aliases": [],
+        "query": "local file inventory Obsidian"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openclaw/openclaw:openclaw-live-updater",
+      "queries": [
+        "local file inventory Obsidian"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "openclaw-live-updater",
+        "author": "openclaw",
+        "description": "Maintain the canonical live OpenClaw main checkout, managed Gateway, local macOS app, exact-head main CI, and recurring full release validation. Use for fast-forward update heartbeats, post-update runtime verification, attributable CI repair and repo-native landing, or non-publishing Full Release Validation of current main.",
+        "content_language": "en",
+        "github_url": "https://github.com/openclaw/openclaw/tree/main/.agents/skills/openclaw-live-updater",
+        "skillsmp_url": "https://skillsmp.com/creators/openclaw/openclaw/agents-skills-openclaw-live-updater",
+        "repo_stars": 386158,
+        "catalog_updated_at": "2026-08-13T00:17:18+00:00",
+        "source_key": "openclaw/openclaw:.agents/skills/openclaw-live-updater",
+        "family_key": "openclaw/openclaw:openclaw-live-updater",
+        "aliases": [],
+        "query": "local file inventory Obsidian"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openclaw/openclaw:release-openclaw-nightly",
+      "queries": [
+        "local file inventory Obsidian"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "release-openclaw-nightly",
+        "author": "openclaw",
+        "description": "OpenClaw Tideclaw alpha/nightly release automation: isolated branches, local fixes, release CI, branch retention, and forward-port to main.",
+        "content_language": "en",
+        "github_url": "https://github.com/openclaw/openclaw/tree/main/.agents/skills/release-openclaw-nightly",
+        "skillsmp_url": "https://skillsmp.com/creators/openclaw/openclaw/agents-skills-release-openclaw-nightly",
+        "repo_stars": 386158,
+        "catalog_updated_at": "2026-08-13T10:45:36+00:00",
+        "source_key": "openclaw/openclaw:.agents/skills/release-openclaw-nightly",
+        "family_key": "openclaw/openclaw:release-openclaw-nightly",
+        "aliases": [],
+        "query": "local file inventory Obsidian"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openclaw/openclaw:sherpa-onnx-tts",
+      "queries": [
+        "local file inventory Obsidian"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "sherpa-onnx-tts",
+        "author": "openclaw",
+        "description": "Local text-to-speech via sherpa-onnx (offline, no cloud)",
+        "content_language": "en",
+        "github_url": "https://github.com/openclaw/openclaw/tree/main/skills/sherpa-onnx-tts",
+        "skillsmp_url": "https://skillsmp.com/creators/openclaw/openclaw/skills-sherpa-onnx-tts",
+        "repo_stars": 386158,
+        "catalog_updated_at": "2026-05-17T10:50:27+00:00",
+        "source_key": "openclaw/openclaw:skills/sherpa-onnx-tts",
+        "family_key": "openclaw/openclaw:sherpa-onnx-tts",
+        "aliases": [],
+        "query": "local file inventory Obsidian"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "openclaw/openclaw:summarize",
+      "queries": [
+        "local file inventory Obsidian"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "summarize",
+        "author": "openclaw",
+        "description": "Summarize or transcribe URLs, YouTube/videos, podcasts, articles, transcripts, PDFs, and local files.",
+        "content_language": "en",
+        "github_url": "https://github.com/openclaw/openclaw/tree/main/skills/summarize",
+        "skillsmp_url": "https://skillsmp.com/creators/openclaw/openclaw/skills-summarize",
+        "repo_stars": 386158,
+        "catalog_updated_at": "2026-05-17T10:50:27+00:00",
+        "source_key": "openclaw/openclaw:skills/summarize",
+        "family_key": "openclaw/openclaw:summarize",
+        "aliases": [],
+        "query": "local file inventory Obsidian"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "affaan-m/ecc:dynamic-workflow-mode",
+      "queries": [
+        "local file inventory Obsidian"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "dynamic-workflow-mode",
+        "author": "affaan-m",
+        "description": "Design task-local harnesses, eval gates, and reusable skill extraction for Claude dynamic workflow mode and other adaptive agent harnesses. Use when building a task-local harness, adding eval gates, or extracting a reusable skill from ad-hoc work.",
+        "content_language": "en",
+        "github_url": "https://github.com/affaan-m/ECC/tree/main/skills/dynamic-workflow-mode",
+        "skillsmp_url": "https://skillsmp.com/creators/affaan-m/ecc/skills-dynamic-workflow-mode",
+        "repo_stars": 239888,
+        "catalog_updated_at": "2026-08-12T03:58:14+00:00",
+        "source_key": "affaan-m/ecc:skills/dynamic-workflow-mode",
+        "family_key": "affaan-m/ecc:dynamic-workflow-mode",
+        "aliases": [],
+        "query": "local file inventory Obsidian"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "affaan-m/ecc:hermes-imports",
+      "queries": [
+        "local file inventory Obsidian"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "hermes-imports",
+        "author": "affaan-m",
+        "description": "Convert local Hermes operator workflows into sanitized ECC skills and release-pack artifacts. Use when preparing a Hermes workflow for public ECC reuse without leaking private workspace state, credentials, or local-only paths.",
+        "content_language": "en",
+        "github_url": "https://github.com/affaan-m/ECC/tree/main/skills/hermes-imports",
+        "skillsmp_url": "https://skillsmp.com/creators/affaan-m/ecc/skills-hermes-imports",
+        "repo_stars": 239888,
+        "catalog_updated_at": "2026-06-11T12:12:21+00:00",
+        "source_key": "affaan-m/ecc:skills/hermes-imports",
+        "family_key": "affaan-m/ecc:hermes-imports",
+        "aliases": [],
+        "query": "local file inventory Obsidian"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "affaan-m/ecc:production-audit",
+      "queries": [
+        "local file inventory Obsidian"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "production-audit",
+        "author": "affaan-m",
+        "description": "Local-evidence production readiness audit for shipped apps, pre-launch reviews, post-merge checks, and \"what breaks in prod?\" questions without sending repo data to an external audit service. Use when auditing production readiness before launch, after a merge, or when asked what breaks in prod.",
+        "content_language": "en",
+        "github_url": "https://github.com/affaan-m/ECC/tree/main/skills/production-audit",
+        "skillsmp_url": "https://skillsmp.com/creators/affaan-m/ecc/skills-production-audit",
+        "repo_stars": 239888,
+        "catalog_updated_at": "2026-08-12T03:58:14+00:00",
+        "source_key": "affaan-m/ecc:skills/production-audit",
+        "family_key": "affaan-m/ecc:production-audit",
+        "aliases": [],
+        "query": "local file inventory Obsidian"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "nousresearch/hermes-agent:obsidian",
+      "queries": [
+        "Obsidian image asset catalog",
+        "Obsidian knowledge base organization",
+        "Obsidian vault project memory"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "obsidian",
+        "author": "NousResearch",
+        "description": "Read, search, create, and edit notes in the Obsidian vault.",
+        "content_language": "en",
+        "github_url": "https://github.com/NousResearch/hermes-agent/tree/main/skills/note-taking/obsidian",
+        "skillsmp_url": "https://skillsmp.com/creators/nousresearch/hermes-agent/skills-note-taking-obsidian",
+        "repo_stars": 229950,
+        "catalog_updated_at": "2026-08-08T22:27:29+00:00",
+        "source_key": "nousresearch/hermes-agent:skills/note-taking/obsidian",
+        "family_key": "nousresearch/hermes-agent:obsidian",
+        "aliases": [],
+        "query": "Obsidian knowledge base organization"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "nexu-io/open-design:html-ppt-obsidian-claude-gradient",
+      "queries": [
+        "Obsidian image asset catalog",
+        "Obsidian knowledge base organization",
+        "Obsidian vault project memory"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "html-ppt-obsidian-claude-gradient",
+        "author": "nexu-io",
+        "description": "Open Design's enterprise AI-adoption brief: local-first agents at work, the risk controls, the ROI, and the rollout plan. Built as a decision-grade AI literacy deck for leadership, IT, security.",
+        "content_language": "en",
+        "github_url": "https://github.com/nexu-io/open-design/tree/main/design-templates/html-ppt-obsidian-claude-gradient",
+        "skillsmp_url": "https://skillsmp.com/creators/nexu-io/open-design/design-templates-html-ppt-obsidian-claude-gradient",
+        "repo_stars": 85523,
+        "catalog_updated_at": "2026-07-18T03:41:08+00:00",
+        "source_key": "nexu-io/open-design:design-templates/html-ppt-obsidian-claude-gradient",
+        "family_key": "nexu-io/open-design:html-ppt-obsidian-claude-gradient",
+        "aliases": [
+          {
+            "language": "en",
+            "github_url": "https://github.com/nexu-io/open-design/tree/main/plugins/_official/examples/html-ppt-obsidian-claude-gradient"
+          },
+          {
+            "language": "en",
+            "github_url": "https://github.com/nexu-io/open-design/tree/main/plugins/_official/examples/html-ppt-obsidian-claude-gradient"
+          }
+        ],
+        "query": "Obsidian knowledge base organization"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "hkuds/cli-anything:cli-anything-obsidian",
+      "queries": [
+        "Obsidian image asset catalog",
+        "Obsidian knowledge base organization",
+        "Obsidian vault project memory"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "cli-anything-obsidian",
+        "author": "HKUDS",
+        "description": "Command-line interface for Obsidian — Knowledge management and note-taking via Obsidian Local REST API. Designed for AI agents and power users who need to manage notes, search the vault, and execute commands without the GUI.",
+        "content_language": "en",
+        "github_url": "https://github.com/HKUDS/CLI-Anything/tree/main/skills/cli-anything-obsidian",
+        "skillsmp_url": "https://skillsmp.com/creators/hkuds/cli-anything/skills-cli-anything-obsidian",
+        "repo_stars": 46962,
+        "catalog_updated_at": "2026-05-18T21:56:53+00:00",
+        "source_key": "hkuds/cli-anything:skills/cli-anything-obsidian",
+        "family_key": "hkuds/cli-anything:cli-anything-obsidian",
+        "aliases": [],
+        "query": "Obsidian knowledge base organization"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "kepano/obsidian-skills:json-canvas",
+      "queries": [
+        "Obsidian image asset catalog",
+        "Obsidian knowledge base organization",
+        "Obsidian vault project memory"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "json-canvas",
+        "author": "kepano",
+        "description": "Create and edit JSON Canvas files (.canvas) with nodes, edges, groups, and connections. Use when working with .canvas files, creating visual canvases, mind maps, flowcharts, or when the user mentions Canvas files in Obsidian.",
+        "content_language": "en",
+        "github_url": "https://github.com/kepano/obsidian-skills/tree/main/skills/json-canvas",
+        "skillsmp_url": "https://skillsmp.com/creators/kepano/obsidian-skills/skills-json-canvas",
+        "repo_stars": 45427,
+        "catalog_updated_at": "2026-02-25T11:32:59+00:00",
+        "source_key": "kepano/obsidian-skills:skills/json-canvas",
+        "family_key": "kepano/obsidian-skills:json-canvas",
+        "aliases": [],
+        "query": "Obsidian knowledge base organization"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "kepano/obsidian-skills:obsidian-bases",
+      "queries": [
+        "Obsidian image asset catalog",
+        "Obsidian knowledge base organization",
+        "Obsidian vault project memory"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "obsidian-bases",
+        "author": "kepano",
+        "description": "Create and edit Obsidian Bases (.base files) with views, filters, formulas, and summaries. Use when working with .base files, creating database-like views of notes, or when the user mentions Bases, table views, card views, filters, or formulas in Obsidian.",
+        "content_language": "en",
+        "github_url": "https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-bases",
+        "skillsmp_url": "https://skillsmp.com/creators/kepano/obsidian-skills/skills-obsidian-bases",
+        "repo_stars": 45427,
+        "catalog_updated_at": "2026-04-07T08:34:35+00:00",
+        "source_key": "kepano/obsidian-skills:skills/obsidian-bases",
+        "family_key": "kepano/obsidian-skills:obsidian-bases",
+        "aliases": [],
+        "query": "Obsidian knowledge base organization"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "kepano/obsidian-skills:obsidian-cli",
+      "queries": [
+        "Obsidian image asset catalog",
+        "Obsidian knowledge base organization",
+        "Obsidian vault project memory"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "obsidian-cli",
+        "author": "kepano",
+        "description": "Interact with Obsidian vaults using the Obsidian CLI to read, create, search, and manage notes, tasks, properties, and more. Also supports plugin and theme development with commands to reload plugins, run JavaScript, capture errors, take screenshots, and inspect the DOM. Use when the user asks to interact with their Obsidian vault, manage notes, search vault content, perform vault operations from the command line, or develop and debug Obsidian plugins and themes.",
+        "content_language": "en",
+        "github_url": "https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-cli",
+        "skillsmp_url": "https://skillsmp.com/creators/kepano/obsidian-skills/skills-obsidian-cli",
+        "repo_stars": 45427,
+        "catalog_updated_at": "2026-02-25T11:32:59+00:00",
+        "source_key": "kepano/obsidian-skills:skills/obsidian-cli",
+        "family_key": "kepano/obsidian-skills:obsidian-cli",
+        "aliases": [],
+        "query": "Obsidian knowledge base organization"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    },
+    {
+      "family_key": "kepano/obsidian-skills:obsidian-markdown",
+      "queries": [
+        "Obsidian image asset catalog",
+        "Obsidian knowledge base organization",
+        "Obsidian vault project memory"
+      ],
+      "skills_sh": null,
+      "skillsmp": {
+        "source": "skillsmp",
+        "name": "obsidian-markdown",
+        "author": "kepano",
+        "description": "Create and edit Obsidian Flavored Markdown with wikilinks, embeds, callouts, properties, and other Obsidian-specific syntax. Use when working with .md files in Obsidian, or when the user mentions wikilinks, callouts, frontmatter, tags, embeds, or Obsidian notes.",
+        "content_language": "en",
+        "github_url": "https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-markdown",
+        "skillsmp_url": "https://skillsmp.com/creators/kepano/obsidian-skills/skills-obsidian-markdown",
+        "repo_stars": 45427,
+        "catalog_updated_at": "2026-03-22T15:03:48+00:00",
+        "source_key": "kepano/obsidian-skills:skills/obsidian-markdown",
+        "family_key": "kepano/obsidian-skills:obsidian-markdown",
+        "aliases": [],
+        "query": "Obsidian knowledge base organization"
+      },
+      "catalogs": [
+        "skillsmp"
+      ],
+      "requires_source_review": true
+    }
+  ],
+  "missing_evidence": [],
+  "next_steps": [
+    "shortlist by job relevance and role coverage, not combined popularity",
+    "open canonical GitHub source and inspect SKILL.md before adoption",
+    "verify license, maintenance, permissions, security, duplication, and rating evidence",
+    "write keep/adapt/reject/invent synthesis before authoring"
+  ]
+}

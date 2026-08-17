@@ -1,0 +1,33 @@
+{
+  "positive_concepts": {
+    "obsidian": ["obsidian", "知识库", "vault"],
+    "archive": ["整理", "归档", "索引", "catalog", "链接", "archive"],
+    "artifacts": ["绘画", "作品", "图片", "视频", "素材", "文件", "项目", "art", "file", "files", "media"],
+    "action": ["创建", "建立", "同步", "organize", "link", "catalog"]
+  },
+  "description_required_concepts": ["obsidian", "archive", "artifacts", "action"],
+  "recommended_threshold": 0.34,
+  "negative_patterns": ["^(只)?翻译", "^写一首", "^生成一张", "^修复.*单个"],
+  "should_trigger": [
+    {"family": "creative-archive", "text": "把我的绘画和提示词整理进 Obsidian 知识库，并链接原文件"},
+    {"family": "project-archive", "text": "为这些项目文件创建可持续同步的 Obsidian 索引"},
+    {"family": "media-catalog", "text": "organize local image and video assets into an Obsidian vault catalog"},
+    {"family": "safe-linking", "text": "建立作品素材到知识库的链接，但不要移动我的文件"},
+    {"family": "cross-project-memory", "text": "把这个 Obsidian 库设为所有项目的长期记忆，让每次 Agent 任务先检索后更新"},
+    {"family": "multi-client-memory", "text": "为 Obsidian 知识库建立 Agent 规则，让 VSCode 和其他工具同步项目结论"},
+    {"family": "global-memory-coordinator", "text": "在每个 Codex 任务前后调用 $starline-obsidian-archive 同步 Obsidian 项目记忆，但不要扫描素材"},
+    {"family": "session-summary", "text": "每个实质性 Codex 会话结束后创建摘要，链接回 Obsidian 项目记忆，但不要保存聊天全文"}
+  ],
+  "should_not_trigger": [
+    {"family": "translation", "text": "只翻译这一段英文"},
+    {"family": "image-generation", "text": "生成一张赛博朋克海报"},
+    {"family": "single-note", "text": "帮我润色 Obsidian 里的一条日记"},
+    {"family": "cloud-backup", "text": "把电脑文件自动上传到网盘"}
+  ],
+  "near_neighbor": [
+    {"family": "single-image-edit", "text": "修复这一张图片的噪点"},
+    {"family": "plain-obsidian", "text": "我想在 Obsidian 写今天的日记"},
+    {"family": "prompt-writing", "text": "为视频作品写一个生成提示词"},
+    {"family": "disk-cleanup", "text": "清理电脑里的重复文件释放空间"}
+  ]
+}
