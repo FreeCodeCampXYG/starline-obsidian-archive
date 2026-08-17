@@ -1,0 +1,40 @@
+interface:
+  display_name: "Starline Obsidian Archive"
+  author: "墨点星痕 (starline)"
+  short_description: "作为 Agent 的任务记忆与会话摘要协调器，并将授权资料安全链接到 Obsidian"
+  default_prompt: "Use $starline-obsidian-archive in Memory Coordination mode for every non-trivial task: read the vault's AGENTS.md and relevant project context first; after verified completion, create one concise session summary linked to the authoritative project or system note, then update only durable verified conclusions. Do not save raw dialogue or inventory/scan source folders in this mode. Switch to archive workflow only for explicitly requested, user-approved local source folders: link records into the existing Obsidian vault without moving originals, create deterministic generated index notes, update durable project memory, and verify links and UTF-8. When explicitly requested, establish a portable vault-level AGENTS.md Pull / Push protocol for cross-project memory; do not claim real-time raw-chat bridging. Never scan chat/browser caches or delete, upload, or copy original files unless the user explicitly requests it."
+  examples:
+    - "把我的绘画、视频和分镜资料整理进 Obsidian，但不要搬动原文件"
+    - "为这几个作品目录建立可反复同步的 Obsidian 索引"
+    - "将本机项目文件关联到现有知识库，并记录已完成内容和下一步"
+    - "把这个 Obsidian 库设为所有项目的长期记忆，让每次 Agent 任务先检索后更新"
+    - "在每个 Codex 任务前后调用这个 Skill，同步 Obsidian 长期记忆，但不要扫描素材"
+    - "每个实质性 Codex 会话结束后创建摘要，链接回项目记忆，但不要保存聊天全文"
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets: ["openai", "claude", "generic", "agent-skills-compatible", "vscode"]
+  activation:
+    mode: "automatic-or-manual"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "powershell-or-bash"
+  trust:
+    source_tier: "local-user-approved"
+    remote_inline_execution: "forbid"
+  permissions:
+    network: "read-only research of explicitly scoped public open-source references; not required for archive generation"
+    file_read: "Obsidian AGENTS.md, relevant notes, and explicitly user-approved source roots; do not inspect chat caches or browser data by default"
+    file_write: "selected vault target and the Skill package only; original source files remain unchanged"
+    publishing: "forbidden unless explicitly requested"
+  degradation:
+    no_network: "perform local archive workflow and record missing live research evidence"
+    no_obsidian_cli: "write standards-compliant Markdown and file links; do not require Obsidian to be open"
+    no_hash_budget: "skip exact duplicate detection and state that duplicate evidence is unavailable"
+gates:
+  library:
+    - "explicit source-boundary approval"
+    - "dry-run inventory before first write"
+    - "original-source preservation"
+    - "UTF-8 and wikilink verification"
+    - "passing trigger evaluation"

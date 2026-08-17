@@ -1,0 +1,177 @@
+{
+  "schema_version": "2.0.0-starline-lite",
+  "generated_at": "2026-08-16",
+  "package": {
+    "name": "starline-obsidian-archive",
+    "version": "1.3.1",
+    "owner": "墨点星痕 (starline)",
+    "maturity_tier": "library",
+    "lifecycle_stage": "library",
+    "upstream_inspiration": "https://github.com/openclaw/openclaw/tree/main/extensions/memory-wiki/skills/obsidian-vault-maintainer; https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-markdown; https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-cli; https://github.com/johansan/obsidian-featured-image",
+    "upstream_sync": {}
+  },
+  "intent": {
+    "description": "Organize explicitly scoped local project, art, image, video, and creation-record files into a safe, portable Obsidian knowledge-base archive. It can also act as a global Agent's Memory Coordination mode: retrieve relevant Vault context before every non-trivial task, create one concise linked session summary for a substantive completed session, and sync only durable conclusions after verified completion. Inventory sources in place, create linked index notes, detect optional exact duplicates, sync durable project context, and, when explicitly requested, establish a vault-wide AGENTS.md Pull / Push protocol for cross-project and cross-client long-term memory without moving originals. Use when users ask to organize, catalog, link, archive, continuously maintain local creative/project records, make an Obsidian vault a shared long-term memory system, request session summaries linked to project notes, or explicitly invoke this Skill as a task-memory coordinator. Do not use for image generation, cloud backup, raw-chat backup, real-time chat interception, or destructive file cleanup.\n",
+    "job_to_be_done": "Organize explicitly scoped local project, art, image, video, and creation-record files into a safe, portable Obsidian knowledge-base archive. It can also act as a global Agent's Memory Coordination mode: retrieve relevant Vault context before every non-trivial task, create one concise linked session summary for a substantive completed session, and sync only durable conclusions after verified completion. Inventory sources in place, create linked index notes, detect optional exact duplicates, sync durable project context, and, when explicitly requested, establish a vault-wide AGENTS.md Pull / Push protocol for cross-project and cross-client long-term memory without moving originals. Use when users ask to organize, catalog, link, archive, continuously maintain local creative/project records, make an Obsidian vault a shared long-term memory system, request session summaries linked to project notes, or explicitly invoke this Skill as a task-memory coordinator. Do not use for image generation, cloud backup, raw-chat backup, real-time chat interception, or destructive file cleanup.\n",
+    "target_users": [
+      "需要长期维护本地创作、媒体或项目档案的 Obsidian 用户",
+      "希望让多个 Agent 通过同一 Vault 共享长期项目结论的用户",
+      "希望让 Codex 在所有非临时任务中统一执行长期记忆 Pull / Push 与会话摘要的用户"
+    ],
+    "inputs": [
+      "Obsidian vault 路径",
+      "用户批准的来源目录",
+      "可选的上下文文档和去重需求",
+      "可选的跨项目长期记忆规则请求",
+      "可选的全局 Agent 任务上下文",
+      "可选的会话摘要模式请求"
+    ],
+    "outputs": [
+      "来源清单",
+      "可点击的 Obsidian 索引",
+      "分组笔记",
+      "JSON 清单",
+      "项目记忆更新",
+      "可选的 Vault 根 AGENTS.md 与客户端接入协议",
+      "轻量的任务前 Memory Pull 与任务后 Memory Push",
+      "可选的、链接权威笔记的会话摘要"
+    ],
+    "exclusions": [
+      "原始文件迁移或删除",
+      "未授权全盘扫描",
+      "云端同步",
+      "图片生成",
+      "敏感数据收集",
+      "实时截取、逐字保存或桥接聊天记录"
+    ],
+    "starline_defaults": {
+      "skill_name_prefix": "starline-",
+      "author_name": "墨点星痕",
+      "author_english_name": "starline",
+      "frontmatter_author": "墨点星痕 (starline)"
+    },
+    "naming": {
+      "default_prefix": "starline-",
+      "max_preferred_hyphen_parts": 3,
+      "allow_user_prefix_override": true,
+      "allow_no_prefix": true
+    }
+  },
+  "triggers": {
+    "should_trigger": [
+      "把我的绘画和提示词整理进 Obsidian 知识库，并链接原文件",
+      "为这些项目文件创建可持续同步的 Obsidian 索引",
+      "organize local image and video assets into an Obsidian vault catalog",
+      "建立作品素材到知识库的链接，但不要移动我的文件",
+      "把这个 Obsidian 库设为所有项目的长期记忆，让每次 Agent 任务先检索后更新",
+      "为 Obsidian 知识库建立 Agent 规则，让 VSCode 和其他工具同步项目结论",
+      "在每个 Codex 任务前后调用 $starline-obsidian-archive 同步 Obsidian 项目记忆，但不要扫描素材",
+      "每个实质性 Codex 会话结束后创建摘要，链接回 Obsidian 项目记忆，但不要保存聊天全文"
+    ],
+    "should_not_trigger": [
+      "只翻译这一段英文",
+      "生成一张赛博朋克海报",
+      "帮我润色 Obsidian 里的一条日记",
+      "把电脑文件自动上传到网盘"
+    ],
+    "near_neighbor": [
+      "修复这一张图片的噪点",
+      "我想在 Obsidian 写今天的日记",
+      "为视频作品写一个生成提示词",
+      "清理电脑里的重复文件释放空间"
+    ]
+  },
+  "workflow": {
+    "router_rules": [],
+    "compact_workflow": [
+      "Resolve the vault path. Read `<vault>/AGENTS.md` when present, then retrieve its relevant index, project-memory, and reusable-knowledge notes. If the user explicitly requests a shared long-term memory system and no equivalent policy exists, add a portable root rule and linked client protocol following [the agent-memory bridge contract](references/agent-memory-bridge.md).",
+      "If the user explicitly requested archive work and approved source roots, inventory them with the bundled script in dry-run mode. Use media files by default; add `--include-context` only when scripts, prompts, or design documents are part of the record. Otherwise use Global Memory Coordination Mode and skip directly to the applicable durable project-memory update.",
+      "For archive work, review counts, candidate groups, excluded directories, unreadable files, and the likely privacy boundary. Narrow false-positive sources before writing.",
+      "For approved archive work, run with `--write`; add `--hash-content` when exact duplicate detection is worth the I/O cost. The script writes an index, group notes, and a JSON manifest with source-relative paths plus clickable local `file:///` links.",
+      "Create or update the human-maintained project memory: background, durable preferences, key decisions, completed content, current state, failed approaches, pitfalls, reusable techniques, and next steps. If the project has a `DEV_STATE.md` or equivalent, update it for confirmed code/configuration/production changes and include verification results. Register the project memory in the vault's central project index using the existing table or convention. For a substantive completed session, create one concise linked session summary before this Memory Push, following [the session-summary contract](references/session-summary-mode.md). Write only durable, confirmed facts; do not save raw conversation text or sensitive data.",
+      "Verify strict UTF-8 decoding, generated wikilinks, target containment, source-file counts, and that originals have not been modified. Record any uncertain classifications as needing review.",
+      "On later tasks, perform the vault's required Memory Pull before work and its Memory Push after a meaningful result. Retrieve the archive's project memory and generated index first when archive work is requested; rerun the same source configuration only when source changes need synchronization."
+    ],
+    "gate_ladder": [],
+    "output_contract": [
+      "a source inventory and the final approved source boundaries;",
+      "a project-memory note and a central-index link that fit the current vault;",
+      "`<target>/自动生成/资源总览.md`, source-group notes, and `资源清单.json` produced by the bundled script;",
+      "a concise report of file counts, duplicate handling, exclusions, verification, and anything requiring manual classification; keep large source or generated binaries at their approved project paths and record links/status rather than copying them into the Vault;",
+      "no altered original assets, no copied credentials, and no claims that unreviewed files are artistic works.",
+      "when explicitly requested, a portable vault-level `AGENTS.md` and client protocol that require task-start retrieval and durable task-end updates, while clearly excluding real-time raw-chat bridging.",
+      "when session-summary mode is enabled, one concise session note per substantive completed session, linked to its authoritative project or system note without a raw transcript."
+    ]
+  },
+  "resources": {
+    "references": [
+      "references\\agent-memory-bridge.md",
+      "references\\session-summary-mode.md",
+      "references\\source-safety.md",
+      "references\\vault-contract.md"
+    ],
+    "scripts": [
+      "scripts\\index_artifacts.py"
+    ],
+    "evals": [
+      "evals\\trigger_cases.json"
+    ],
+    "reports": [
+      "reports\\creation-handoff.md",
+      "reports\\install-verification.md",
+      "reports\\prior-art-candidates.json",
+      "reports\\prior-art-research.md",
+      "reports\\release-check-local.json",
+      "reports\\skill-ir.json",
+      "reports\\trigger-eval.json"
+    ]
+  },
+  "portability": {
+    "canonical_format": "agent-skills",
+    "adapter_targets": [
+      "openai",
+      "claude",
+      "generic",
+      "agent-skills-compatible",
+      "vscode"
+    ],
+    "activation": {
+      "mode": "automatic-or-manual",
+      "paths": []
+    },
+    "execution": {
+      "context": "inline",
+      "shell": "powershell-or-bash"
+    },
+    "trust": {
+      "source_tier": "local-user-approved",
+      "remote_inline_execution": "forbid"
+    },
+    "permissions": {
+      "network": "read-only research of explicitly scoped public open-source references; not required for archive generation",
+      "file_read": "Obsidian AGENTS.md, relevant notes, and explicitly user-approved source roots; do not inspect chat caches or browser data by default",
+      "file_write": "selected vault target and the Skill package only; original source files remain unchanged",
+      "publishing": "forbidden unless explicitly requested"
+    },
+    "degradation": {
+      "no_network": "perform local archive workflow and record missing live research evidence",
+      "no_obsidian_cli": "write standards-compliant Markdown and file links; do not require Obsidian to be open",
+      "no_hash_budget": "skip exact duplicate detection and state that duplicate evidence is unavailable"
+    }
+  },
+  "gates": {
+    "library": [
+      "explicit source-boundary approval",
+      "dry-run inventory before first write",
+      "original-source preservation",
+      "UTF-8 and wikilink verification",
+      "passing trigger evaluation"
+    ]
+  },
+  "evidence_boundary": {
+    "generated_reports_are_evidence": true,
+    "planned_work_is_evidence": false,
+    "missing_external_or_human_evidence_label": "missing evidence",
+    "public_claim_policy": "claim only what local validation, install proof, human review, or provider-backed evidence actually supports"
+  }
+}
