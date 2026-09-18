@@ -1,0 +1,14 @@
+# Local authoring and package outputs.
+work/
+dist/
+__pycache__/
+reports/*-check.json
+reports/*-check.md
+reports/install-simulation.*
+reports/package-verification*.json
+reports/package-verification*.md
+reports/review-studio.*
+reports/skill-interpretation.*
+reports/skill-overview.*
+scripts/__pycache__/
+tests/__pycache__/

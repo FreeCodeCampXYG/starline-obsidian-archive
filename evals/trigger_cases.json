@@ -1,13 +1,13 @@
 {
   "positive_concepts": {
-    "obsidian": ["obsidian", "知识库", "vault"],
-    "archive": ["整理", "归档", "索引", "catalog", "链接", "archive"],
-    "artifacts": ["绘画", "作品", "图片", "视频", "素材", "文件", "项目", "art", "file", "files", "media"],
-    "action": ["创建", "建立", "同步", "organize", "link", "catalog"]
+    "obsidian": ["obsidian", "知识库", "vault", "Obsidian"],
+    "memory": ["长期记忆", "项目记忆", "上下文", "session summary", "Memory Pull", "Memory Push"],
+    "archive": ["整理", "归档", "索引", "catalog", "链接", "archive", "审计", "断链", "未命名"],
+    "action": ["创建", "建立", "同步", "编译", "生成", "organize", "link", "catalog", "audit", "brief"]
   },
-  "description_required_concepts": ["obsidian", "archive", "artifacts", "action"],
+  "description_required_concepts": ["obsidian", "memory", "archive", "action"],
   "recommended_threshold": 0.34,
-  "negative_patterns": ["^(只)?翻译", "^写一首", "^生成一张", "^修复.*单个"],
+  "negative_patterns": ["^(只)?翻译", "^写一首", "^生成一张", "^修复.*单个", "上传.*网盘"],
   "should_trigger": [
     {"family": "creative-archive", "text": "把我的绘画和提示词整理进 Obsidian 知识库，并链接原文件"},
     {"family": "project-archive", "text": "为这些项目文件创建可持续同步的 Obsidian 索引"},
@@ -16,7 +16,10 @@
     {"family": "cross-project-memory", "text": "把这个 Obsidian 库设为所有项目的长期记忆，让每次 Agent 任务先检索后更新"},
     {"family": "multi-client-memory", "text": "为 Obsidian 知识库建立 Agent 规则，让 VSCode 和其他工具同步项目结论"},
     {"family": "global-memory-coordinator", "text": "在每个 Codex 任务前后调用 $starline-obsidian-archive 同步 Obsidian 项目记忆，但不要扫描素材"},
-    {"family": "session-summary", "text": "每个实质性 Codex 会话结束后创建摘要，链接回 Obsidian 项目记忆，但不要保存聊天全文"}
+    {"family": "session-summary", "text": "每个实质性 Codex 会话结束后创建摘要，链接回 Obsidian 项目记忆，但不要保存聊天全文"},
+    {"family": "vault-audit", "text": "审计 Vault 里的未命名笔记、项目档案和断链，但不要自动改名"},
+    {"family": "context-brief", "text": "把 Obsidian 里的指定项目记忆编译成一个可上传给 ChatGPT 的 ai_context.md"},
+    {"family": "reviewed-context", "text": "只用我批准的几份 Markdown 生成上下文简报，保留未知和截断状态"}
   ],
   "should_not_trigger": [
     {"family": "translation", "text": "只翻译这一段英文"},
@@ -28,6 +31,7 @@
     {"family": "single-image-edit", "text": "修复这一张图片的噪点"},
     {"family": "plain-obsidian", "text": "我想在 Obsidian 写今天的日记"},
     {"family": "prompt-writing", "text": "为视频作品写一个生成提示词"},
-    {"family": "disk-cleanup", "text": "清理电脑里的重复文件释放空间"}
+    {"family": "disk-cleanup", "text": "清理电脑里的重复文件释放空间"},
+    {"family": "cloud-upload", "text": "把项目资料同步上传到 Google Drive"}
   ]
 }

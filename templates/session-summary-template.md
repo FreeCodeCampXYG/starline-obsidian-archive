@@ -20,6 +20,13 @@ status: completed
 
 -
 
+## Evidence status
+
+- confirmed:
+- derived:
+- needs_review:
+- blocked:
+
 ## Key decision or change
 
 -

@@ -1,233 +1,955 @@
 {
-  "ok": true,
   "threshold": 0.34,
-  "description_concepts": [
-    "action",
-    "archive",
-    "artifacts",
-    "obsidian"
-  ],
-  "missing_description_concepts": [],
-  "summary": {
-    "total": 16,
-    "passed": 16,
-    "false_positive": 0,
-    "false_negative": 0,
-    "pass_rate": 1.0
+  "threshold_explanation": "Prompts at or above the threshold are treated as trigger matches. Scores are driven primarily by semantic intent coverage: packaging intent, workflow-to-skill transformation intent, reuse/distribution intent, and eval intent. Explicit exclusions such as summary-only, translation-only, one-off, document-only, or do-not-build directives apply direct penalties and can override otherwise similar wording.",
+  "false_positives": 0,
+  "false_negatives": 0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "bucket_stats": {
+    "should_trigger": {
+      "total": 11,
+      "passed": 11,
+      "pass_rate": 1.0
+    },
+    "should_not_trigger": {
+      "total": 4,
+      "passed": 4,
+      "pass_rate": 1.0
+    },
+    "near_neighbor": {
+      "total": 5,
+      "passed": 5,
+      "pass_rate": 1.0
+    }
   },
-  "failures": [],
+  "family_stats": {
+    "creative-archive": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "project-archive": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "media-catalog": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "safe-linking": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "cross-project-memory": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "multi-client-memory": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "global-memory-coordinator": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "session-summary": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "vault-audit": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "context-brief": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "reviewed-context": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "translation": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "image-generation": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "single-note": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "cloud-backup": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "single-image-edit": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "plain-obsidian": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "prompt-writing": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "disk-cleanup": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "cloud-upload": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    }
+  },
+  "misfires": [],
   "results": {
     "should_trigger": [
       {
-        "prompt": "把我的绘画和提示词整理进 Obsidian 知识库，并链接原文件",
+        "prompt": "���ҵĻ滭����ʾ�������� Obsidian ֪ʶ�⣬������ԭ�ļ�",
         "family": "creative-archive",
-        "expected_trigger": true,
+        "score": 0.761,
         "predicted_trigger": true,
+        "expected_trigger": true,
         "passed": true,
-        "score": 0.75,
-        "matched_concepts": [
-          "archive",
-          "artifacts",
-          "obsidian"
-        ],
-        "negative_pattern": null
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [
+            "action",
+            "archive",
+            "obsidian"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.74,
+          "support_score": 0,
+          "lexical_support": 0.25,
+          "negative_penalty": 0,
+          "coverage_boost": 0.06,
+          "concept_evidence": {
+            "positive": {
+              "action": [
+                "����"
+              ],
+              "archive": [
+                "����"
+              ],
+              "obsidian": [
+                "obsidian",
+                "֪ʶ��"
+              ]
+            },
+            "negative": {}
+          }
+        }
       },
       {
-        "prompt": "为这些项目文件创建可持续同步的 Obsidian 索引",
+        "prompt": "Ϊ��Щ��Ŀ�ļ������ɳ���ͬ���� Obsidian ����",
         "family": "project-archive",
-        "expected_trigger": true,
+        "score": 0.6,
         "predicted_trigger": true,
+        "expected_trigger": true,
         "passed": true,
-        "score": 1.0,
-        "matched_concepts": [
-          "action",
-          "archive",
-          "artifacts",
-          "obsidian"
-        ],
-        "negative_pattern": null
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [
+            "archive",
+            "obsidian"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.58,
+          "support_score": 0,
+          "lexical_support": 0.333,
+          "negative_penalty": 0,
+          "coverage_boost": 0.04,
+          "concept_evidence": {
+            "positive": {
+              "archive": [
+                "����"
+              ],
+              "obsidian": [
+                "obsidian"
+              ]
+            },
+            "negative": {}
+          }
+        }
       },
       {
         "prompt": "organize local image and video assets into an Obsidian vault catalog",
         "family": "media-catalog",
-        "expected_trigger": true,
+        "score": 0.784,
         "predicted_trigger": true,
+        "expected_trigger": true,
         "passed": true,
-        "score": 0.75,
-        "matched_concepts": [
-          "action",
-          "archive",
-          "obsidian"
-        ],
-        "negative_pattern": null
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [
+            "action",
+            "archive",
+            "obsidian"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.74,
+          "support_score": 0,
+          "lexical_support": 0.545,
+          "negative_penalty": 0,
+          "coverage_boost": 0.06,
+          "concept_evidence": {
+            "positive": {
+              "action": [
+                "organize",
+                "catalog"
+              ],
+              "archive": [
+                "catalog"
+              ],
+              "obsidian": [
+                "obsidian",
+                "vault"
+              ]
+            },
+            "negative": {}
+          }
+        }
       },
       {
-        "prompt": "建立作品素材到知识库的链接，但不要移动我的文件",
+        "prompt": "������Ʒ�زĵ�֪ʶ������ӣ�����Ҫ�ƶ��ҵ��ļ�",
         "family": "safe-linking",
-        "expected_trigger": true,
+        "score": 0.741,
         "predicted_trigger": true,
+        "expected_trigger": true,
         "passed": true,
-        "score": 1.0,
-        "matched_concepts": [
-          "action",
-          "archive",
-          "artifacts",
-          "obsidian"
-        ],
-        "negative_pattern": null
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [
+            "action",
+            "archive",
+            "obsidian"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.74,
+          "support_score": 0,
+          "lexical_support": 0.0,
+          "negative_penalty": 0,
+          "coverage_boost": 0.06,
+          "concept_evidence": {
+            "positive": {
+              "action": [
+                "����"
+              ],
+              "archive": [
+                "����"
+              ],
+              "obsidian": [
+                "֪ʶ��"
+              ]
+            },
+            "negative": {}
+          }
+        }
       },
       {
-        "prompt": "把这个 Obsidian 库设为所有项目的长期记忆，让每次 Agent 任务先检索后更新",
+        "prompt": "����� Obsidian ����Ϊ������Ŀ�ĳ��ڼ��䣬��ÿ�� Agent �����ȼ��������",
         "family": "cross-project-memory",
-        "expected_trigger": true,
+        "score": 0.619,
         "predicted_trigger": true,
+        "expected_trigger": true,
         "passed": true,
-        "score": 0.5,
-        "matched_concepts": [
-          "artifacts",
-          "obsidian"
-        ],
-        "negative_pattern": null
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [
+            "memory",
+            "obsidian"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.6,
+          "support_score": 0,
+          "lexical_support": 0.333,
+          "negative_penalty": 0,
+          "coverage_boost": 0.04,
+          "concept_evidence": {
+            "positive": {
+              "memory": [
+                "���ڼ���"
+              ],
+              "obsidian": [
+                "obsidian"
+              ]
+            },
+            "negative": {}
+          }
+        }
       },
       {
-        "prompt": "为 Obsidian 知识库建立 Agent 规则，让 VSCode 和其他工具同步项目结论",
+        "prompt": "Ϊ Obsidian ֪ʶ�⽨�� Agent ������ VSCode ����������ͬ����Ŀ����",
         "family": "multi-client-memory",
-        "expected_trigger": true,
+        "score": 0.52,
         "predicted_trigger": true,
+        "expected_trigger": true,
         "passed": true,
-        "score": 0.75,
-        "matched_concepts": [
-          "action",
-          "artifacts",
-          "obsidian"
-        ],
-        "negative_pattern": null
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [
+            "action",
+            "obsidian"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.5,
+          "support_score": 0,
+          "lexical_support": 0.25,
+          "negative_penalty": 0,
+          "coverage_boost": 0.04,
+          "concept_evidence": {
+            "positive": {
+              "action": [
+                "����"
+              ],
+              "obsidian": [
+                "obsidian",
+                "֪ʶ��"
+              ]
+            },
+            "negative": {}
+          }
+        }
       },
       {
-        "prompt": "在每个 Codex 任务前后调用 $starline-obsidian-archive 同步 Obsidian 项目记忆，但不要扫描素材",
+        "prompt": "��ÿ�� Codex ����ǰ����� $starline-obsidian-archive ͬ�� Obsidian ��Ŀ���䣬����Ҫɨ���ز�",
         "family": "global-memory-coordinator",
-        "expected_trigger": true,
+        "score": 0.591,
         "predicted_trigger": true,
+        "expected_trigger": true,
         "passed": true,
-        "score": 1.0,
-        "matched_concepts": [
-          "action",
-          "archive",
-          "artifacts",
-          "obsidian"
-        ],
-        "negative_pattern": null
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [
+            "archive",
+            "obsidian"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.58,
+          "support_score": 0,
+          "lexical_support": 0.222,
+          "negative_penalty": 0,
+          "coverage_boost": 0.04,
+          "concept_evidence": {
+            "positive": {
+              "archive": [
+                "archive"
+              ],
+              "obsidian": [
+                "obsidian"
+              ]
+            },
+            "negative": {}
+          }
+        }
       },
       {
-        "prompt": "每个实质性 Codex 会话结束后创建摘要，链接回 Obsidian 项目记忆，但不要保存聊天全文",
+        "prompt": "ÿ��ʵ���� Codex �Ự�����󴴽�ժҪ�����ӻ� Obsidian ��Ŀ���䣬����Ҫ��������ȫ��",
         "family": "session-summary",
-        "expected_trigger": true,
+        "score": 0.585,
         "predicted_trigger": true,
+        "expected_trigger": true,
         "passed": true,
-        "score": 1.0,
-        "matched_concepts": [
-          "action",
-          "archive",
-          "artifacts",
-          "obsidian"
-        ],
-        "negative_pattern": null
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [
+            "archive",
+            "obsidian"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.58,
+          "support_score": 0,
+          "lexical_support": 0.143,
+          "negative_penalty": 0,
+          "coverage_boost": 0.04,
+          "concept_evidence": {
+            "positive": {
+              "archive": [
+                "����"
+              ],
+              "obsidian": [
+                "obsidian"
+              ]
+            },
+            "negative": {}
+          }
+        }
+      },
+      {
+        "prompt": "��� Vault ���δ�����ʼǡ���Ŀ�����Ͷ���������Ҫ�Զ�����",
+        "family": "vault-audit",
+        "score": 0.59,
+        "predicted_trigger": true,
+        "expected_trigger": true,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [
+            "archive",
+            "obsidian"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.58,
+          "support_score": 0,
+          "lexical_support": 0.2,
+          "negative_penalty": 0,
+          "coverage_boost": 0.04,
+          "concept_evidence": {
+            "positive": {
+              "archive": [
+                "���"
+              ],
+              "obsidian": [
+                "vault"
+              ]
+            },
+            "negative": {}
+          }
+        }
+      },
+      {
+        "prompt": "�� Obsidian ���ָ����Ŀ��������һ�����ϴ��� ChatGPT �� ai_context.md",
+        "family": "context-brief",
+        "score": 0.511,
+        "predicted_trigger": true,
+        "expected_trigger": true,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [
+            "action",
+            "obsidian"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.5,
+          "support_score": 0,
+          "lexical_support": 0.143,
+          "negative_penalty": 0,
+          "coverage_boost": 0.04,
+          "concept_evidence": {
+            "positive": {
+              "action": [
+                "����"
+              ],
+              "obsidian": [
+                "obsidian"
+              ]
+            },
+            "negative": {}
+          }
+        }
+      },
+      {
+        "prompt": "ֻ������׼�ļ��� Markdown ���������ļ򱨣�����δ֪�ͽض�״̬",
+        "family": "reviewed-context",
+        "score": 0.687,
+        "predicted_trigger": true,
+        "expected_trigger": true,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [
+            "action",
+            "archive",
+            "memory"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.66,
+          "support_score": 0,
+          "lexical_support": 0.25,
+          "negative_penalty": 0,
+          "coverage_boost": 0.06,
+          "concept_evidence": {
+            "positive": {
+              "action": [
+                "����"
+              ],
+              "archive": [
+                "�����ļ�"
+              ],
+              "memory": [
+                "������"
+              ]
+            },
+            "negative": {}
+          }
+        }
       }
     ],
     "should_not_trigger": [
       {
-        "prompt": "只翻译这一段英文",
+        "prompt": "ֻ������һ��Ӣ��",
         "family": "translation",
-        "expected_trigger": false,
-        "predicted_trigger": false,
-        "passed": true,
         "score": 0.0,
-        "matched_concepts": [],
-        "negative_pattern": null
+        "predicted_trigger": false,
+        "expected_trigger": false,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [
+            "translation_only"
+          ],
+          "exclusive_negative_concepts": [
+            "translation_only"
+          ],
+          "semantic_coverage": 0.0,
+          "support_score": 0,
+          "lexical_support": 0.0,
+          "negative_penalty": 0.35,
+          "coverage_boost": 0.0,
+          "concept_evidence": {
+            "positive": {},
+            "negative": {
+              "translation_only": [
+                "����"
+              ]
+            }
+          }
+        }
       },
       {
-        "prompt": "生成一张赛博朋克海报",
+        "prompt": "����һ��������˺���",
         "family": "image-generation",
-        "expected_trigger": false,
-        "predicted_trigger": false,
-        "passed": true,
         "score": 0.0,
-        "matched_concepts": [],
-        "negative_pattern": "^生成一张"
+        "predicted_trigger": false,
+        "expected_trigger": false,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [
+            "action"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [
+            "image_generation"
+          ],
+          "exclusive_negative_concepts": [
+            "image_generation"
+          ],
+          "semantic_coverage": 0.16,
+          "support_score": 0,
+          "lexical_support": 0.0,
+          "negative_penalty": 0.35,
+          "coverage_boost": 0.0,
+          "concept_evidence": {
+            "positive": {
+              "action": [
+                "����"
+              ]
+            },
+            "negative": {
+              "image_generation": [
+                "����һ��"
+              ]
+            }
+          }
+        }
       },
       {
-        "prompt": "帮我润色 Obsidian 里的一条日记",
+        "prompt": "������ɫ Obsidian ���һ���ռ�",
         "family": "single-note",
-        "expected_trigger": false,
+        "score": 0.339,
         "predicted_trigger": false,
+        "expected_trigger": false,
         "passed": true,
-        "score": 0.25,
-        "matched_concepts": [
-          "obsidian"
-        ],
-        "negative_pattern": null
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [
+            "obsidian"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.34,
+          "support_score": 0,
+          "lexical_support": 0.333,
+          "negative_penalty": 0,
+          "coverage_boost": 0.0,
+          "concept_evidence": {
+            "positive": {
+              "obsidian": [
+                "obsidian"
+              ]
+            },
+            "negative": {}
+          }
+        },
+        "boundary_case": true
       },
       {
-        "prompt": "把电脑文件自动上传到网盘",
+        "prompt": "�ѵ����ļ��Զ��ϴ�������",
         "family": "cloud-backup",
-        "expected_trigger": false,
+        "score": 0.0,
         "predicted_trigger": false,
+        "expected_trigger": false,
         "passed": true,
-        "score": 0.25,
-        "matched_concepts": [
-          "artifacts"
-        ],
-        "negative_pattern": null
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [
+            "cloud_upload"
+          ],
+          "exclusive_negative_concepts": [
+            "cloud_upload"
+          ],
+          "semantic_coverage": 0.0,
+          "support_score": 0,
+          "lexical_support": 0.0,
+          "negative_penalty": 0.3,
+          "coverage_boost": 0.0,
+          "concept_evidence": {
+            "positive": {},
+            "negative": {
+              "cloud_upload": [
+                "�ϴ�������"
+              ]
+            }
+          }
+        }
       }
     ],
     "near_neighbor": [
       {
-        "prompt": "修复这一张图片的噪点",
+        "prompt": "�޸���һ��ͼƬ�����",
         "family": "single-image-edit",
-        "expected_trigger": false,
+        "score": 0.0,
         "predicted_trigger": false,
+        "expected_trigger": false,
         "passed": true,
-        "score": 0.25,
-        "matched_concepts": [
-          "artifacts"
-        ],
-        "negative_pattern": null
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.0,
+          "support_score": 0,
+          "lexical_support": 0.0,
+          "negative_penalty": 0,
+          "coverage_boost": 0.0,
+          "concept_evidence": {
+            "positive": {},
+            "negative": {}
+          }
+        }
       },
       {
-        "prompt": "我想在 Obsidian 写今天的日记",
+        "prompt": "������ Obsidian д������ռ�",
         "family": "plain-obsidian",
-        "expected_trigger": false,
+        "score": 0.339,
         "predicted_trigger": false,
+        "expected_trigger": false,
         "passed": true,
-        "score": 0.25,
-        "matched_concepts": [
-          "obsidian"
-        ],
-        "negative_pattern": null
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [
+            "obsidian"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.34,
+          "support_score": 0,
+          "lexical_support": 0.333,
+          "negative_penalty": 0,
+          "coverage_boost": 0.0,
+          "concept_evidence": {
+            "positive": {
+              "obsidian": [
+                "obsidian"
+              ]
+            },
+            "negative": {}
+          }
+        },
+        "boundary_case": true
       },
       {
-        "prompt": "为视频作品写一个生成提示词",
+        "prompt": "Ϊ��Ƶ��Ʒдһ��������ʾ��",
         "family": "prompt-writing",
-        "expected_trigger": false,
+        "score": 0.147,
         "predicted_trigger": false,
+        "expected_trigger": false,
         "passed": true,
-        "score": 0.25,
-        "matched_concepts": [
-          "artifacts"
-        ],
-        "negative_pattern": null
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [
+            "action"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.16,
+          "support_score": 0,
+          "lexical_support": 0.0,
+          "negative_penalty": 0,
+          "coverage_boost": 0.0,
+          "concept_evidence": {
+            "positive": {
+              "action": [
+                "����"
+              ]
+            },
+            "negative": {}
+          }
+        }
       },
       {
-        "prompt": "清理电脑里的重复文件释放空间",
+        "prompt": "������������ظ��ļ��ͷſռ�",
         "family": "disk-cleanup",
-        "expected_trigger": false,
+        "score": 0.0,
         "predicted_trigger": false,
+        "expected_trigger": false,
         "passed": true,
-        "score": 0.25,
-        "matched_concepts": [
-          "artifacts"
-        ],
-        "negative_pattern": null
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.0,
+          "support_score": 0,
+          "lexical_support": 0.0,
+          "negative_penalty": 0,
+          "coverage_boost": 0.0,
+          "concept_evidence": {
+            "positive": {},
+            "negative": {}
+          }
+        }
+      },
+      {
+        "prompt": "����Ŀ����ͬ���ϴ��� Google Drive",
+        "family": "cloud-upload",
+        "score": 0.0,
+        "predicted_trigger": false,
+        "expected_trigger": false,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "obsidian",
+            "memory",
+            "archive",
+            "action"
+          ],
+          "matched_desired_concepts": [],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.0,
+          "support_score": 0,
+          "lexical_support": 0.0,
+          "negative_penalty": 0,
+          "coverage_boost": 0.0,
+          "concept_evidence": {
+            "positive": {},
+            "negative": {}
+          }
+        }
       }
     ]
   }

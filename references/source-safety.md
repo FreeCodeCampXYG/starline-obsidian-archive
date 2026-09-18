@@ -16,6 +16,10 @@ Do not scan chat-app attachments, browser profiles/download caches, email stores
 
 File extension and directory grouping are inventory facts, not authorship, ownership, copyright, or artistic-quality judgments. Screenshots, reference images, and exported previews should be marked for human review when their role is unclear.
 
+## Memory and context boundary
+
+Vault structure audits are read-only by default. Context briefs read only explicitly approved Markdown notes and must preserve `needs_review` and `blocked` states. A project name never authorizes recursive code, session, chat, browser, cloud, or dependency scanning.
+
 ## Duplicate boundary
 
 `--hash-content` identifies byte-for-byte duplicate content only. Similar-looking images, resized versions, and derivative works are not considered duplicates unless a human decides so.
