@@ -2,7 +2,7 @@
 
 ## Result
 
-Created `starline-obsidian-archive` 1.0.0 and updated it to 1.3.1 at `C:\Users\xiaoy\.agents\skills\starline-obsidian-archive`.
+Created `starline-obsidian-archive` 1.0.0 and updated it to 1.3.1 in a compatible local Agent Skills directory; the 1.4.0 redesign is prepared in the public repository worktree before install-directory synchronization.
 
 It inventories explicitly approved local creative/project sources, links them into an Obsidian vault without moving originals, produces repeatable group notes and a JSON manifest, and directs the agent to maintain durable project memory around the generated index. Publication was not requested.
 
@@ -13,6 +13,8 @@ Version 1.2.0 adds Global Memory Coordination mode. A compatible Agent can invok
 Version 1.3.0 adds opt-in session-summary mode. A substantive completed session creates one concise note linked to its authoritative project or system note, enabling Obsidian Backlinks without turning the Vault into a raw chat archive.
 
 Version 1.3.1 promotes three reusable handoff rules from project practice: update an existing `DEV_STATE.md` (or equivalent) after confirmed code/configuration/production changes; verify that a requested global or workspace Agent binding is actually discoverable by the target client; and keep large binaries at approved project paths while the Vault stores links and durable status rather than copies.
+
+Version 1.4.0 separates four routes: Memory Coordination, approved Archive, read-only Vault Audit, and explicit-list context compilation. It adds `audit_vault.py`, `build_context_brief.py`, evidence states, a context ladder, reviewed context manifests, truncation/sensitivity boundaries, and library output/trust profiles.
 
 ## Reference Skills Studied
 

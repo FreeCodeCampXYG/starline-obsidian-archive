@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "reviewed_at": "2026-09-18",
+  "capabilities": {
+    "file_write": {
+      "decision": "approved",
+      "reviewer": "用户明确授权的本地维护请求",
+      "reason": "用户明确要求优化本地技能、同步安装目录和治理指定 Obsidian Vault；写入边界只覆盖这些目标，不扩大到未批准来源。",
+      "scope": "仅允许写入选定 Vault 目标、显式指定的上下文简报输出目录和技能包工作树；原始来源资产保持只读。",
+      "expires_at": "2027-09-18",
+      "evidence": ["user-request", "source-boundary-review", "dry-run-before-write"],
+      "target_enforcement": {
+        "openai": "Agent must keep the explicit Vault/source boundary and show preview before write.",
+        "claude": "Agent must keep the explicit Vault/source boundary and show preview before write.",
+        "generic": "Caller must provide the selected Vault/source boundary and review the preview.",
+        "vscode": "Workspace instructions must preserve the explicit Vault/source boundary and preview gate."
+      }
+    }
+  }
+}

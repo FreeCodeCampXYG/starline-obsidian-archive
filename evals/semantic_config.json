@@ -1,0 +1,15 @@
+{
+  "positive_concepts": {
+    "obsidian": {"weight": 0.34, "phrases": ["obsidian", "知识库", "vault"]},
+    "memory": {"weight": 0.26, "phrases": ["project memory", "长期记忆", "上下文", "session summary", "Memory Pull", "Memory Push"]},
+    "archive": {"weight": 0.24, "phrases": ["archive", "归档", "索引", "catalog", "链接", "audit", "审计", "context brief", "上下文简报"]},
+    "action": {"weight": 0.16, "phrases": ["organize", "link", "catalog", "audit", "compile", "generate", "整理", "建立", "生成", "编译"]}
+  },
+  "negative_concepts": {
+    "translation_only": {"weight": 0.35, "exclusive": true, "phrases": ["translate", "翻译", "翻译成", "译为"]},
+    "image_generation": {"weight": 0.35, "exclusive": true, "phrases": ["generate an image", "生成一张", "画一张"]},
+    "cloud_upload": {"weight": 0.30, "exclusive": true, "phrases": ["upload to drive", "上传到网盘", "云端备份"]},
+    "destructive_cleanup": {"weight": 0.26, "exclusive": true, "phrases": ["clean up duplicates", "清理重复文件", "删除原文件"]}
+  },
+  "fallback_positive_concepts": ["obsidian", "memory", "archive", "action"]
+}

@@ -1,114 +1,83 @@
 # Starline Obsidian Archive
 
-`starline-obsidian-archive` connects user-approved local creative and project records to an Obsidian vault without relocating the originals. It creates a compact, repeatable index rather than a fragile pile of copied assets.
+`starline-obsidian-archive` is a local-first, reviewable memory and archive workflow for Obsidian. It keeps the Vault human-readable, preserves original files, and gives Agents a small context ladder instead of asking them to read an ever-growing folder blindly.
 
-## What it does
+## Four modes
 
-- inventories images, video, audio, editable art files, and optionally prompts or project documents;
-- keeps source paths relative to named source roots and adds clickable local file links;
-- produces deterministic Obsidian Markdown group notes and a JSON manifest;
-- optionally detects exact duplicate content with SHA-256;
-- preserves hand-written project memory outside the generated folder.
-- when explicitly requested, establishes a portable Vault-level `AGENTS.md` rule so compatible Agents retrieve context before work and write durable conclusions back after work.
-- can run as a lightweight **Memory Coordination** Skill for every non-trivial Agent task, without scanning source folders unless archive work is explicitly requested.
-- when enabled, creates one concise session-summary note per substantive completed session, linked to the authoritative project or system note rather than copying the chat.
+- **Memory Coordination** reads Vault policy and relevant project context before a meaningful task, then writes only durable verified conclusions after completion.
+- **Archive** indexes explicitly approved local media or project records into a target `自动生成/` directory without moving originals.
+- **Context Brief** compiles explicitly approved project memories or notes into `ai_context.md` and `context-manifest.json` for planning, handoff, or manual ChatGPT upload.
+- **Vault Audit** reports unnamed paths, missing project authorities, index gaps, and broken internal links without changing notes.
+
+The modes are deliberately separate: a normal coding task does not become a Vault scan, and a context brief does not become a codebase upload.
 
 ## Install
 
-Copy this directory into a compatible agent's skills directory, retaining its contents and UTF-8 encoding. The package has no network or third-party Python dependencies.
+Copy this directory into a compatible Agent Skills directory, retaining UTF-8 encoding:
 
 ```bash
 npx skills add FreeCodeCampXYG/starline-obsidian-archive
 test -f ~/.agents/skills/starline-obsidian-archive/SKILL.md
 ```
 
-## Prerequisites
+The package uses Python's standard library only. Python 3 is required for the scripts; Node.js/npx is only required by the installer.
 
-- [ ] Python 3 available: `python --version`
-- [ ] Node.js and npx available (only for `npx skills add` installs): `node --version && npx --version`
-- [ ] A writable Obsidian vault path and explicitly approved source roots before any inventory write
+## Context brief quick start
 
-## 你可以直接这样说
+Preview a small, explicit context set:
 
-- “把我的绘画、分镜和视频素材链接进 Obsidian。”
-- “盘点这几个作品目录，建立一个可持续同步的作品档案。”
-- “将本机项目资料整理到现有 Obsidian 知识库，但不要搬动原文件。”
-- “把这个 Obsidian 库设为所有项目的长期记忆，让 Agent 每次任务先检索后更新。”
+```bash
+python scripts/build_context_brief.py \
+  --vault "/path/to/Obsidian Vault" \
+  --project "my-project" \
+  --note "02-复用知识/技术方案索引.md" \
+  --question "What should I verify before the next implementation?" \
+  --output-dir "./context-output"
+```
 
-## Quick start
+Review the source list and then add `--write`. The compiler does not recursively include session logs, source code, chat exports, cloud files, or dependencies. Oversized notes are marked `needs_review`; suspected credentials are `blocked` and their content is not written.
 
-First run an inventory without writes:
+## Vault audit quick start
+
+```bash
+python scripts/audit_vault.py \
+  --vault "/path/to/Obsidian Vault" \
+  --output "00-系统/自动生成/结构审计"
+```
+
+The report is read-only evidence. It does not decide what an unnamed note should be called and does not auto-repair links.
+
+## Archive quick start
+
+Always preview first:
 
 ```bash
 python scripts/index_artifacts.py \
   --vault "/path/to/Obsidian Vault" \
-  --target "01-Projects/Creative Archive" \
+  --target "01-项目/作品档案" \
   --source "Illustrations=/path/to/illustrations" \
-  --source "Film project=/path/to/video-project" \
   --include-context
 ```
 
-After checking the summary, add `--write`. Add `--hash-content` only when exact duplicate reporting is useful. The agent then links the archive from the vault's project index and writes the human-maintained project memory.
+After reviewing counts, exclusions, privacy boundaries, and optional hashing, add `--write`. Generated files stay under the target's `自动生成/` directory; handwritten project memory stays outside it.
 
-## Cross-client long-term memory
+## Memory contract
 
-When explicitly requested, the skill first preserves any existing `<vault>/AGENTS.md`; otherwise it creates a portable root rule and a linked client protocol. The rule requires a task-start context Pull and a task-end durable-facts Push. It keeps the selected vault path local to the user's setup and never embeds the author's own path.
+Use `<vault>/AGENTS.md` as the runtime policy. The default retrieval order is governance -> project index -> one project memory -> relevant reusable knowledge -> explicit detail. Use `confirmed`, `derived`, `needs_review`, and `blocked` to prevent gaps from becoming invented facts. See [references/memory-contract.md](references/memory-contract.md), [references/context-brief.md](references/context-brief.md), and [references/vault-structure.md](references/vault-structure.md).
 
-Saved Vault files are visible to other clients sharing that folder, but this does not bridge live chat histories or make every Agent automatically obey the rule. Clients that do not discover `AGENTS.md` must receive an equivalent global or workspace instruction. For VSCode/DeepSeek, configure that instruction in the specific extension's rules or system-prompt setting.
+Saved Vault files are visible to other clients sharing the folder, but this does not bridge live reasoning or hidden chat history. Clients that do not discover `AGENTS.md` need the portable instruction in [references/agent-memory-bridge.md](references/agent-memory-bridge.md).
 
-When a user asks for a global or workspace binding, verify the target client's actual rule file or settings path after applying the instruction; a shared Vault folder alone is not proof that the client loaded it. For projects with `DEV_STATE.md` (or an equivalent handoff note), update that note after confirmed code, configuration, or produced-artifact changes. Keep large binaries at their project path and store only links, verified status, and durable conclusions in the Vault.
+## Privacy and safety
 
-## Global Agent use
+- no cloud upload or third-party runtime dependency;
+- no raw chat, browser cache, email store, credential, or private-key capture;
+- no implicit whole-disk or whole-Vault brief generation;
+- no source move, rename, delete, or copy by default;
+- SHA-256 means exact byte equality only, not semantic similarity or deletion approval.
 
-Point a compatible Agent's global rule at `$starline-obsidian-archive` and require **Memory Coordination mode** before and after every non-trivial task. In this mode, the Skill retrieves task-relevant Vault notes first and synchronizes only durable, verified conclusions at the end. It does not run the media inventory script, hash files, or scan folders unless archive work and source roots were explicitly approved.
+## Prior art
 
-Enable **session-summary mode** when you want Backlinks from a project or system note back to a concise Agent-session handoff. The Skill creates one note per substantive completed session, links the authority note, and excludes raw dialogue, prompts, command output, and secrets. See [the session-summary contract](references/session-summary-mode.md).
-
-## Verify
-
-```bash
-python -m py_compile scripts/index_artifacts.py
-python scripts/index_artifacts.py --help
-python /path/to/starline-meta-skill/scripts/validate_skill.py .
-```
-
-## Generated structure
-
-```text
-<vault>/<target>/
-  项目记忆.md                 # human-maintained by the agent/user
-  自动生成/
-    资源总览.md               # deterministic source and group index
-    资源清单.json             # source-relative inventory
-    分组/
-      <source-and-folder>.md  # one note per source folder group
-```
-
-The `自动生成` directory is owned by the synchronizer. Keep personal commentary in `项目记忆.md` or sibling notes so refreshes cannot overwrite it.
-
-## Troubleshooting
-
-### Obsidian does not open a source file
-
-The generated link is a local `file:///` URI. Confirm the original file still exists and that the operating system permits local file links. The manifest also preserves its source label and relative path, so update the source configuration and rerun after moving a source root.
-
-### The inventory includes non-creative files
-
-Use narrower `--source` paths. The script already excludes common repository/cache folders; it deliberately does not infer authorship or artistic intent from a filename.
-
-### A prior generated group is obsolete
-
-Rerun after confirming the target. Add `--prune` only to remove obsolete notes that contain the script's `managed_by` marker; handwritten notes are never in that managed path.
-
-### I need another Agent or VSCode extension to use the same memory
-
-Add the portable instruction from [agent-memory-bridge.md](references/agent-memory-bridge.md) to that client's global or workspace rules. Ask for the exact extension name before attempting client-specific configuration; settings differ and this package does not claim automatic chat-context interception.
-
-## Attribution
-
-This package semantically adopts public ideas from [OpenClaw's Obsidian vault maintainer](https://github.com/openclaw/openclaw/tree/main/extensions/memory-wiki/skills/obsidian-vault-maintainer), [Kepano's Obsidian Markdown skill](https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-markdown), [Kepano's Obsidian CLI skill](https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-cli), and [Featured Image for Obsidian](https://github.com/johansan/obsidian-featured-image). Their source files were read for workflow ideas; no third-party code is executed or copied.
-
-<!-- upstream_inspiration: https://github.com/openclaw/openclaw/tree/main/extensions/memory-wiki/skills/obsidian-vault-maintainer; https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-markdown; https://github.com/kepano/obsidian-skills/tree/main/skills/obsidian-cli; https://github.com/johansan/obsidian-featured-image -->
+The design adapts deterministic generated views and conservative boundaries from OpenClaw/Kepano Obsidian skills, reviewed snapshot and question-directed brief ideas from [AI Context Linker](https://github.com/xhonye/AI-Context-Linker), tiered retrieval and closeout ideas from [obsidian-agent-memory](https://github.com/mithunyc/obsidian-agent-memory) and [agent-memory-wiki](https://github.com/cobibean/agent-memory-wiki), and explicit align/plan/ship/handoff separation from [coding-agent-toolkit](https://github.com/stefan-jansen/coding-agent-toolkit). No third-party code is copied or executed.
 
 ## License
 
